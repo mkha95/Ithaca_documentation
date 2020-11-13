@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['laplacianproblem_1803',['laplacianProblem',['../classlaplacianProblem.html',1,'']]],
-  ['lrsensitivity_1804',['LRSensitivity',['../classLRSensitivity.html',1,'']]]
+  ['laplacianproblem_1804',['laplacianProblem',['../classlaplacianProblem.html',1,'']]],
+  ['lrsensitivity_1805',['LRSensitivity',['../classLRSensitivity.html',1,'']]]
 ];

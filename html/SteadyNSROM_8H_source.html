@@ -105,37 +105,64 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">    You should have received a copy of the GNU Lesser General Public License</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    along with ITHACA-FV. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">Class</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">    bifurcationROM</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">    SteadyNSROM</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">Description</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    A general template class to handle bifurcation at ROM level is implemented</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     A class that provides the utlilities for solving a reduced order model for a Steady navier stokes problem in a fully implicit was</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">SourceFiles</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     bifurcationROM_NSS.C</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     SteadyNSROM.C</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">\*---------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ReducedSteadyNS_8H.html">ReducedSteadyNS.H</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSteadyNSROM.html">SteadyNSROM</a>: <a class="code" href="classreducedSteadyNS.html">reducedSteadyNS</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSteadyNSROM.html#a3038e6e9580e6495c046b9a69b9d34d7">reconstruct</a>(fileName folder,<span class="keyword">const</span> <span class="keywordtype">int</span> &amp; counter);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classSteadyNSROM.html#af16f25b22dc755287ff92f53784ea4ca">SteadyNSROM</a>(<a class="code" href="classsteadyNS.html">steadyNS</a>&amp; Foamproblem, Eigen::MatrixXd vel);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classreducedProblem.html#a2bf35778f70fe3541990026bc6403a56">solveOnline</a>(<span class="keyword">const</span> scalar &amp;);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">   42</a></span>&#160;         PtrList&lt;volScalarField&gt; <a class="code" href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">pRecFields</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">   44</a></span>&#160;         PtrList&lt;volVectorField&gt; <a class="code" href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">uRecFields</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ReducedSteadyNS_8H.html">ReducedSteadyNS.H</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef SteadyNSROM_H</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define SteadyNSROM_H</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*\</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">                        Class SteadyNSROM</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">\*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSteadyNSROM.html">SteadyNSROM</a>: <a class="code" href="classreducedSteadyNS.html">reducedSteadyNS</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//public member</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>        <a class="code" href="classSteadyNSROM.html#af16f25b22dc755287ff92f53784ea4ca">SteadyNSROM</a>(<a class="code" href="classsteadyNS.html">steadyNS</a>&amp; Foamproblem, Eigen::MatrixXd vel);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classreducedProblem.html#a2bf35778f70fe3541990026bc6403a56">solveOnline</a>(<span class="keyword">const</span> scalar &amp;);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">   68</a></span>&#160;        PtrList&lt;volScalarField&gt; <a class="code" href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">pRecFields</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">   71</a></span>&#160;        PtrList&lt;volVectorField&gt; <a class="code" href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">uRecFields</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// destructor</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classSteadyNSROM.html#a33839ea55445fdcf7d5e1a4c519661e2">   74</a></span>&#160;        <a class="code" href="classSteadyNSROM.html#a33839ea55445fdcf7d5e1a4c519661e2">~SteadyNSROM</a>() {};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// private members</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> <a class="code" href="classSteadyNSROM.html#a3038e6e9580e6495c046b9a69b9d34d7">reconstruct</a>(fileName folder,<span class="keyword">const</span> <span class="keywordtype">int</span> &amp; counter);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassSteadyNSROM_html_af16f25b22dc755287ff92f53784ea4ca"><div class="ttname"><a href="classSteadyNSROM.html#af16f25b22dc755287ff92f53784ea4ca">SteadyNSROM::SteadyNSROM</a></div><div class="ttdeci">SteadyNSROM(steadyNS &amp;Foamproblem, Eigen::MatrixXd vel)</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8C_source.html#l00031">SteadyNSROM.C:31</a></div></div>
-<div class="ttc" id="aclassSteadyNSROM_html"><div class="ttname"><a href="classSteadyNSROM.html">SteadyNSROM</a></div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00034">SteadyNSROM.H:34</a></div></div>
+<div class="ttc" id="aclassSteadyNSROM_html_af16f25b22dc755287ff92f53784ea4ca"><div class="ttname"><a href="classSteadyNSROM.html#af16f25b22dc755287ff92f53784ea4ca">SteadyNSROM::SteadyNSROM</a></div><div class="ttdeci">SteadyNSROM(steadyNS &amp;Foamproblem, Eigen::MatrixXd vel)</div><div class="ttdoc">constructing a SteadyNSROM starting from the FOM counterpart</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8C_source.html#l00039">SteadyNSROM.C:39</a></div></div>
+<div class="ttc" id="aclassSteadyNSROM_html"><div class="ttname"><a href="classSteadyNSROM.html">SteadyNSROM</a></div><div class="ttdoc">Implementation of class for the reduced model of a  Steady navier stokes problem  for which the onlin...</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00052">SteadyNSROM.H:52</a></div></div>
 <div class="ttc" id="aReducedSteadyNS_8H_html"><div class="ttname"><a href="ReducedSteadyNS_8H.html">ReducedSteadyNS.H</a></div></div>
-<div class="ttc" id="aclassSteadyNSROM_html_a3adfd55b3093609805681ce0e0b15b16"><div class="ttname"><a href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">SteadyNSROM::pRecFields</a></div><div class="ttdeci">PtrList&lt; volScalarField &gt; pRecFields</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00042">SteadyNSROM.H:42</a></div></div>
-<div class="ttc" id="aclassSteadyNSROM_html_a619b52f2688a30815c0eaf2c8b05c33f"><div class="ttname"><a href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">SteadyNSROM::uRecFields</a></div><div class="ttdeci">PtrList&lt; volVectorField &gt; uRecFields</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00044">SteadyNSROM.H:44</a></div></div>
+<div class="ttc" id="aclassSteadyNSROM_html_a3adfd55b3093609805681ce0e0b15b16"><div class="ttname"><a href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">SteadyNSROM::pRecFields</a></div><div class="ttdeci">PtrList&lt; volScalarField &gt; pRecFields</div><div class="ttdoc">list of pointer of the reduced field for pressure</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00068">SteadyNSROM.H:68</a></div></div>
+<div class="ttc" id="aclassSteadyNSROM_html_a619b52f2688a30815c0eaf2c8b05c33f"><div class="ttname"><a href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">SteadyNSROM::uRecFields</a></div><div class="ttdeci">PtrList&lt; volVectorField &gt; uRecFields</div><div class="ttdoc">list of pointer of the reduced field for velocity</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00071">SteadyNSROM.H:71</a></div></div>
 <div class="ttc" id="aclasssteadyNS_html"><div class="ttname"><a href="classsteadyNS.html">steadyNS</a></div><div class="ttdoc">Implementation of a parametrized full order  steady NS problem  and preparation of the the reduced ma...</div><div class="ttdef"><b>Definition:</b> <a href="steadyNS_8H_source.html#l00069">steadyNS.H:69</a></div></div>
 <div class="ttc" id="aclassreducedSteadyNS_html"><div class="ttname"><a href="classreducedSteadyNS.html">reducedSteadyNS</a></div><div class="ttdoc">Class where it is implemented a reduced problem for the  steady Navier-stokes  problem.</div><div class="ttdef"><b>Definition:</b> <a href="ReducedSteadyNS_8H_source.html#l00084">ReducedSteadyNS.H:84</a></div></div>
 <div class="ttc" id="aclassreducedProblem_html_a2bf35778f70fe3541990026bc6403a56"><div class="ttname"><a href="classreducedProblem.html#a2bf35778f70fe3541990026bc6403a56">reducedProblem::solveOnline</a></div><div class="ttdeci">virtual void solveOnline()</div><div class="ttdoc">Virtual Method to perform and online Solve.</div><div class="ttdef"><b>Definition:</b> <a href="ReducedProblem_8C_source.html#l00056">ReducedProblem.C:56</a></div></div>
-<div class="ttc" id="aclassSteadyNSROM_html_a3038e6e9580e6495c046b9a69b9d34d7"><div class="ttname"><a href="classSteadyNSROM.html#a3038e6e9580e6495c046b9a69b9d34d7">SteadyNSROM::reconstruct</a></div><div class="ttdeci">void reconstruct(fileName folder, const int &amp;counter)</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8C_source.html#l00094">SteadyNSROM.C:94</a></div></div>
+<div class="ttc" id="aclassSteadyNSROM_html_a3038e6e9580e6495c046b9a69b9d34d7"><div class="ttname"><a href="classSteadyNSROM.html#a3038e6e9580e6495c046b9a69b9d34d7">SteadyNSROM::reconstruct</a></div><div class="ttdeci">void reconstruct(fileName folder, const int &amp;counter)</div><div class="ttdoc">private member function used to reconstruct the solution and saving the corresponding outputs</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8C_source.html#l00123">SteadyNSROM.C:123</a></div></div>
+<div class="ttc" id="aclassSteadyNSROM_html_a33839ea55445fdcf7d5e1a4c519661e2"><div class="ttname"><a href="classSteadyNSROM.html#a33839ea55445fdcf7d5e1a4c519661e2">SteadyNSROM::~SteadyNSROM</a></div><div class="ttdeci">~SteadyNSROM()</div><div class="ttdef"><b>Definition:</b> <a href="SteadyNSROM_8H_source.html#l00074">SteadyNSROM.H:74</a></div></div>
 <!-- HTML footer for doxygen 1.8.14-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

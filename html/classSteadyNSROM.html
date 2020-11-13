@@ -83,6 +83,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Implementation of class for the reduced model of a <b> Steady navier stokes problem </b> for which the online solve uses a inconsistent fully implicit.  
+ <a href="classSteadyNSROM.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SteadyNSROM:</div>
@@ -97,20 +100,27 @@ Inheritance diagram for SteadyNSROM:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af16f25b22dc755287ff92f53784ea4ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyNSROM.html#af16f25b22dc755287ff92f53784ea4ca">SteadyNSROM</a> (<a class="el" href="classsteadyNS.html">steadyNS</a> &amp;Foamproblem, Eigen::MatrixXd vel)</td></tr>
+<tr class="memdesc:af16f25b22dc755287ff92f53784ea4ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructing a <a class="el" href="classSteadyNSROM.html" title="Implementation of class for the reduced model of a  Steady navier stokes problem  for which the onlin...">SteadyNSROM</a> starting from the FOM counterpart  <a href="classSteadyNSROM.html#af16f25b22dc755287ff92f53784ea4ca">More...</a><br /></td></tr>
 <tr class="separator:af16f25b22dc755287ff92f53784ea4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7a3b225ba8d77a0035ac9c2f333387c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyNSROM.html#ac7a3b225ba8d77a0035ac9c2f333387c">solveOnline</a> (const scalar &amp;)</td></tr>
+<tr class="memdesc:ac7a3b225ba8d77a0035ac9c2f333387c"><td class="mdescLeft">&#160;</td><td class="mdescRight">online solve for the current value of the kinematic viscosity  <a href="classSteadyNSROM.html#ac7a3b225ba8d77a0035ac9c2f333387c">More...</a><br /></td></tr>
 <tr class="separator:ac7a3b225ba8d77a0035ac9c2f333387c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33839ea55445fdcf7d5e1a4c519661e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyNSROM.html#a33839ea55445fdcf7d5e1a4c519661e2">~SteadyNSROM</a> ()</td></tr>
+<tr class="separator:a33839ea55445fdcf7d5e1a4c519661e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3adfd55b3093609805681ce0e0b15b16"><td class="memItemLeft" align="right" valign="top">PtrList&lt; volScalarField &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">pRecFields</a></td></tr>
+<tr class="memdesc:a3adfd55b3093609805681ce0e0b15b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of pointer of the reduced field for pressure  <a href="classSteadyNSROM.html#a3adfd55b3093609805681ce0e0b15b16">More...</a><br /></td></tr>
 <tr class="separator:a3adfd55b3093609805681ce0e0b15b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a619b52f2688a30815c0eaf2c8b05c33f"><td class="memItemLeft" align="right" valign="top">PtrList&lt; volVectorField &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">uRecFields</a></td></tr>
+<tr class="memdesc:a619b52f2688a30815c0eaf2c8b05c33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of pointer of the reduced field for velocity  <a href="classSteadyNSROM.html#a619b52f2688a30815c0eaf2c8b05c33f">More...</a><br /></td></tr>
 <tr class="separator:a619b52f2688a30815c0eaf2c8b05c33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a3038e6e9580e6495c046b9a69b9d34d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyNSROM.html#a3038e6e9580e6495c046b9a69b9d34d7">reconstruct</a> (fileName folder, const int &amp;counter)</td></tr>
+<tr class="memdesc:a3038e6e9580e6495c046b9a69b9d34d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">private member function used to reconstruct the solution and saving the corresponding outputs  <a href="classSteadyNSROM.html#a3038e6e9580e6495c046b9a69b9d34d7">More...</a><br /></td></tr>
 <tr class="separator:a3038e6e9580e6495c046b9a69b9d34d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classreducedSteadyNS"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classreducedSteadyNS')"><img src="closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="classreducedSteadyNS.html">reducedSteadyNS</a></td></tr>
 <tr class="memitem:a9d1552e4e26f805478e1076c6a23eef3 inherit pub_methods_classreducedSteadyNS"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classreducedSteadyNS.html#a9d1552e4e26f805478e1076c6a23eef3">reducedSteadyNS</a> ()</td></tr>
@@ -245,8 +255,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a60044a44e54d69bd457204917a78d917 inherit pub_attribs_classreducedProblem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00034">34</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
+<div class="textblock"><p>Implementation of class for the reduced model of a <b> Steady navier stokes problem </b> for which the online solve uses a inconsistent fully implicit. </p>
+<p>In this class are implemented the methods for the offline solve and a continuation method for a steady NS problem. this class inherits from <a class="el" href="classreducedSteadyNS.html" title="Class where it is implemented a reduced problem for the  steady Navier-stokes  problem.">reducedSteadyNS</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00052">52</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af16f25b22dc755287ff92f53784ea4ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af16f25b22dc755287ff92f53784ea4ca">&#9670;&nbsp;</a></span>SteadyNSROM()</h2>
@@ -274,7 +286,43 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8C_source.html#l00031">31</a> of file <a class="el" href="SteadyNSROM_8C_source.html">SteadyNSROM.C</a>.</p>
+<p>constructing a <a class="el" href="classSteadyNSROM.html" title="Implementation of class for the reduced model of a  Steady navier stokes problem  for which the onlin...">SteadyNSROM</a> starting from the FOM counterpart </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Foamproblem</td><td>full order problem which must be an object of the <a class="el" href="classSteadyNSSimple.html" title="Implementation of a parametrized full order  steady NS problem  and preparation of the the reduced ma...">SteadyNSSimple</a> class </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vel</td><td>eigen matrix that encodes the information for the boundary condition </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8C_source.html#l00039">39</a> of file <a class="el" href="SteadyNSROM_8C_source.html">SteadyNSROM.C</a>.</p>
+
+</div>
+</div>
+<a id="a33839ea55445fdcf7d5e1a4c519661e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33839ea55445fdcf7d5e1a4c519661e2">&#9670;&nbsp;</a></span>~SteadyNSROM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SteadyNSROM::~SteadyNSROM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00074">74</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
 
 </div>
 </div>
@@ -313,7 +361,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8C_source.html#l00094">94</a> of file <a class="el" href="SteadyNSROM_8C_source.html">SteadyNSROM.C</a>.</p>
+<p>private member function used to reconstruct the solution and saving the corresponding outputs </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">folder</td><td>folder name for reconstruction output="./ITHACAoutput/Online" </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>counter value corresponding to current viscosity </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8C_source.html#l00123">123</a> of file <a class="el" href="SteadyNSROM_8C_source.html">SteadyNSROM.C</a>.</p>
 
 </div>
 </div>
@@ -333,7 +390,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8C_source.html#l00055">55</a> of file <a class="el" href="SteadyNSROM_8C_source.html">SteadyNSROM.C</a>.</p>
+<p>online solve for the current value of the kinematic viscosity </p>
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8C_source.html#l00066">66</a> of file <a class="el" href="SteadyNSROM_8C_source.html">SteadyNSROM.C</a>.</p>
 
 </div>
 </div>
@@ -350,7 +409,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00042">42</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
+<p>list of pointer of the reduced field for pressure </p>
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00068">68</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
 
 </div>
 </div>
@@ -366,7 +427,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00044">44</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
+<p>list of pointer of the reduced field for velocity </p>
+
+<p class="definition">Definition at line <a class="el" href="SteadyNSROM_8H_source.html#l00071">71</a> of file <a class="el" href="SteadyNSROM_8H_source.html">SteadyNSROM.H</a>.</p>
 
 </div>
 </div>

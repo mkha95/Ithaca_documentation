@@ -32,12 +32,13 @@ var searchData=
   ['_7ereductionproblem_1777',['~reductionProblem',['../classreductionProblem.html#aa77fd72def423bc06a6c973e02398a1b',1,'reductionProblem']]],
   ['_7esimplesteadynsrom_1778',['~SimpleSteadyNSROM',['../classSimpleSteadyNSROM.html#a58e3ffad5bafcba1fdbbf308e00023fc',1,'SimpleSteadyNSROM']]],
   ['_7esteadyns_1779',['~steadyNS',['../classsteadyNS.html#a47b6767ff18b45c1573483b7f28dec51',1,'steadyNS']]],
-  ['_7esteadynssimple_1780',['~SteadyNSSimple',['../classSteadyNSSimple.html#a8fe9c806a4df22ebfe9acb275ba33df0',1,'SteadyNSSimple']]],
-  ['_7etm_1781',['~Tm',['../classTm.html#a9f0c54492981fe606f004e0e65b5f854',1,'Tm']]],
-  ['_7etm_5ftime_1782',['~Tm_time',['../classTm__time.html#aa62abf9f1e70a0aadc7f690725f89153',1,'Tm_time']]],
-  ['_7etps_1783',['~TPS',['../classFoam_1_1TPS.html#a495ea19d04eebf86e8b104900efe606e',1,'Foam::TPS']]],
-  ['_7eunsteadybb_1784',['~UnsteadyBB',['../classUnsteadyBB.html#a366274931f1b5c7dbfe0457b0e339870',1,'UnsteadyBB']]],
-  ['_7eunsteadynst_1785',['~unsteadyNST',['../classunsteadyNST.html#a6adaaec15747879c74eb7febce768199',1,'unsteadyNST']]],
-  ['_7eunsteadynstturb_1786',['~UnsteadyNSTTurb',['../classUnsteadyNSTTurb.html#a0e4691d32faa28672e13660e126748e6',1,'UnsteadyNSTTurb']]],
-  ['_7ew2_1787',['~W2',['../classFoam_1_1W2.html#a0c684a38b2eda1172b0e994660d06cf4',1,'Foam::W2']]]
+  ['_7esteadynsrom_1780',['~SteadyNSROM',['../classSteadyNSROM.html#a33839ea55445fdcf7d5e1a4c519661e2',1,'SteadyNSROM']]],
+  ['_7esteadynssimple_1781',['~SteadyNSSimple',['../classSteadyNSSimple.html#a8fe9c806a4df22ebfe9acb275ba33df0',1,'SteadyNSSimple']]],
+  ['_7etm_1782',['~Tm',['../classTm.html#a9f0c54492981fe606f004e0e65b5f854',1,'Tm']]],
+  ['_7etm_5ftime_1783',['~Tm_time',['../classTm__time.html#aa62abf9f1e70a0aadc7f690725f89153',1,'Tm_time']]],
+  ['_7etps_1784',['~TPS',['../classFoam_1_1TPS.html#a495ea19d04eebf86e8b104900efe606e',1,'Foam::TPS']]],
+  ['_7eunsteadybb_1785',['~UnsteadyBB',['../classUnsteadyBB.html#a366274931f1b5c7dbfe0457b0e339870',1,'UnsteadyBB']]],
+  ['_7eunsteadynst_1786',['~unsteadyNST',['../classunsteadyNST.html#a6adaaec15747879c74eb7febce768199',1,'unsteadyNST']]],
+  ['_7eunsteadynstturb_1787',['~UnsteadyNSTTurb',['../classUnsteadyNSTTurb.html#a0e4691d32faa28672e13660e126748e6',1,'UnsteadyNSTTurb']]],
+  ['_7ew2_1788',['~W2',['../classFoam_1_1W2.html#a0c684a38b2eda1172b0e994660d06cf4',1,'Foam::W2']]]
 ];
